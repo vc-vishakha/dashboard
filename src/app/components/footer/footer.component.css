@@ -1,0 +1,32 @@
+.content{
+    font-size: 14px;
+    color: gray;
+    /*float: left;*/
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 30px;
+
+}
+.content-main{
+    width: 100%;
+    float: left;
+}
+.has-text-centered{
+    text-align: center !important;
+    /*float: left*/
+}
+.has-text-right{
+    text-align: right !important;
+    float: right
+    
+}
+.child-content{
+    width: 50%;
+     float: left;
+}
+.has-text-left{
+    text-align: left !important;
+}
+a{
+    text-decoration-line: none
+}

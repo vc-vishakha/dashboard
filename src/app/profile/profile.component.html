@@ -1,0 +1,33 @@
+<a href="javascript:void(0);" mat-raised-button class="backBtn" (click)="goBack()">Back</a>
+<div class="main">
+  <h3>
+     Edit Your Profile !!!
+  </h3>
+  <div>
+    <h4><B> Details</B></h4>
+    <form [formGroup]="editForm" (ngSubmit)="saveProfile()">
+      <mat-form-field>
+          <mat-label>Full Name</mat-label>
+          <input matInput placeholder="Enter Your Full Name" formControlName="fullName" required>
+          <mat-error *ngIf="submitted && f.fullName.errors && f.fullName.touched" class="invalid-feedback">
+              <mat-error *ngIf="f.fullName.errors.required">Name is required</mat-error>
+          </mat-error>
+      </mat-form-field><br/>
+
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your email" formControlName="emailId" required>
+          <mat-error *ngIf="submitted && f.emailId.errors && f.emailId.touched" class="invalid-feedback">
+              <mat-error *ngIf="f.emailId.errors.required">Email is required</mat-error>
+              <mat-error *ngIf="f.emailId.errors.email">Email must be a valid email address</mat-error>
+          </mat-error>
+        </mat-form-field><br/>
+
+      <p class="loginBtn">
+        <button mat-button color="primary" type="submit" [disabled]="!editForm.valid">Save</button>  
+      </p>
+   </form>
+    
+     </div>   
+   
+</div>

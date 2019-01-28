@@ -1,0 +1,17 @@
+body{
+    margin: 0 auto;
+}
+.main{
+    margin: 10px;
+    text-align: center;
+}
+ul{
+    font-size:18px;
+    text-decoration: none;
+    text-decoration-style: none;
+}
+li{
+    text-decoration: none;
+    text-decoration-style: none;   
+    /*list-style-type:none;*/
+}

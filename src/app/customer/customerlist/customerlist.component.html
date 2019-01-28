@@ -1,0 +1,10 @@
+<div>
+  <a href="javascript:void(0);" mat-raised-button id="backButton" #backButton class="backBtn" routerLink="/dashboard">Back</a>&nbsp;
+  <a href="javascript:void(0);" mat-raised-button color="primary" class="backBtn" (click)="resetVotes()">Reset</a>
+<h3>We Have {{customerList.length}} Customers who would give their votes.</h3>
+<h4>Agree: {{agreed}}, Disagree: {{disagreed}}</h4>
+    <app-customerdetail *ngFor="let customer of customerList" [customer]="customer" [name]="customer" (voted)="onVoted($event)">
+    </app-customerdetail>
+    <hr/>
+</div>
+

@@ -1,0 +1,53 @@
+<a href="javascript:void(0);" mat-raised-button class="backBtn" routerLink="/dashboard">Back</a>
+<div class="main">
+  <h3>
+    Welcome to SignUp page !!!
+  </h3>
+</div>
+ <div class="center">
+   <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+      <mat-form-field>
+          <mat-label>Full Name</mat-label>
+          <input matInput placeholder="Enter Your Full Name" formControlName="fullName" required>
+      </mat-form-field><br/>
+
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your email" formControlName="emailId" required>
+          <mat-error *ngIf="submitted && f.emailId.errors && f.emailId.touched" class="invalid-feedback">
+              <mat-error *ngIf="f.emailId.errors.required">Email is required</mat-error>
+              <mat-error *ngIf="f.emailId.errors.email">Email must be a valid email address</mat-error>
+          </mat-error>
+        </mat-form-field><br/>
+
+      <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Enter Your Username" formControlName="userName" required>
+      </mat-form-field><br/>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Enter Password" [type]="hideP ? 'password' : 'text'" formControlName="pswd" required>
+        <mat-icon matSuffix (click)="hideP = !hideP">{{hideP ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="submitted && f.pswd.errors && f.pswd.touched" class="invalid-feedback">
+            <mat-error *ngIf="f.pswd.errors.required">Password is required</mat-error>
+            <mat-error *ngIf="f.pswd.errors.minlength">Password must be at least 6 characters</mat-error>
+        </mat-error>
+      </mat-form-field><br/>
+
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input matInput placeholder="Enter Confirm Password" [type]="hideCP ? 'password' : 'text'" formControlName="cnfPswd" required>
+        <mat-icon matSuffix (click)="hideCP = !hideCP">{{hideCP ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="submitted && f.cnfPswd.errors && f.cnfPswd.touched" class="invalid-feedback">
+            <mat-error *ngIf="f.cnfPswd.errors.required">Confirm Password is required</mat-error>
+            <mat-error *ngIf="f.cnfPswd.errors.minlength">Password must be at least 6 characters</mat-error>
+            <mat-error *ngIf="signUpForm.get('cnfPswd').errors && signUpForm.get('cnfPswd').errors.ConfirmPassword">Password & Confirm Passwords Didnt Matched</mat-error>
+        </mat-error>        
+      </mat-form-field><br/>
+
+      <p class="loginBtn">
+        <button mat-button color="primary" type="submit" [disabled]="!signUpForm.valid" >Sign Up</button>
+      </p>
+   </form>
+</div>

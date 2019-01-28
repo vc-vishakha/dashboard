@@ -1,0 +1,32 @@
+<a href="javascript:void(0);" mat-raised-button id="backButton" #backButton class="backBtn" routerLink="/dashboard">Back</a>
+<!--<button mat-raised-button color="primary" class="logOutBtn" (click)="auth.logout()">Logout</button>-->
+<div class="main">
+  <h3>
+     Welcome to home page !!!
+  </h3>
+  <div>
+    <h4><B>Logged In User Details</B></h4>
+    <button mat-button color="primary" routerLink="/profile" class="logOutBtn" >Edit Profile</button>
+    <ul style="text-align: left">
+      <li>
+       <b>Name</b> :  {{userDetails.fullName | titlecase}}
+      </li>
+      <li>
+       <b>Email</b> : {{userDetails.email | lowercase}}
+      </li>
+      <li>
+       <b>Username</b> : {{userDetails.userName}}
+      </li>
+      <!--<li>
+       <b>Age</b> : {{size}} year old
+      </li>-->
+    </ul>
+    
+     </div>   
+   
+</div>
+<!--<div class="ageDiv">
+    <label [style.font-weight]="500">Select Your Age : {{size}}</label><br/>
+    <button mat-raised-button (click)="dec()" title="decrease">-</button>
+    <button mat-raised-button (click)="inc()" title="increase">+</button><br/>
+</div>-->

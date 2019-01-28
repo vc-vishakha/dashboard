@@ -1,0 +1,7 @@
+<div>
+  <h4>{{customer.id}}. {{customer.name}} : {{agreeDisagree}} </h4>
+  <!--<p>{{customer.name}}</p>-->
+  <button mat-raised-button (click)="vote(true)" [disabled]="didVote">Agree</button>
+  <button mat-raised-button (click)="vote(false)" [disabled]="didVote">Disagree</button>
+</div>
+<!--[disabled]="didVote"  *ngIf=" didVote != '' ? [disabled]="didVote" : '' "-->

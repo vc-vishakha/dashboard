@@ -1,0 +1,48 @@
+<mat-sidenav-container class="all-wrap" >
+    
+  <!--side nav menu-->
+  <mat-sidenav #sidenav over class="sideNavMenu">
+    <mat-nav-list class="mat-list">
+      <a mat-list-item routerLink="/dashboard">Dashboard</a>
+      <a mat-list-item routerLink="/login">Login</a>
+      <a mat-list-item routerLink='/sign-up'>Sign Up</a>
+      <a mat-list-item routerLink='/login'>Profile</a>
+      <a mat-list-item routerLink='/customer'>Customers</a>
+      <a mat-list-item *ngIf="isDisplayed && auth" (click)="auth.logout()">Log out</a>
+      <a mat-list-item *ngIf="isDisplayed && auth == undefined" (click)="logout()">Logout</a>      
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!--other content part of sidenav start-->
+  <mat-sidenav-content class="page-wrap ...">
+      
+    <!--toolbar to open side menu-->
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <span>
+          <mat-icon
+            (click)="sidenav.open()"
+          >menu
+          </mat-icon>
+        </span>
+        <span class="headerBar">            
+                <!-- header -->
+                <app-header></app-header>     
+                <!-- .header -->       
+        </span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    
+    <!--main content-->
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+    
+    <!-- footer -->
+    <app-footer></app-footer>
+    <!-- .footer -->
+ 
+  </mat-sidenav-content>
+  <!--other content part of sidenav end-->
+ 
+</mat-sidenav-container>

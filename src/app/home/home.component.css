@@ -1,0 +1,30 @@
+body{
+    margin: 0 auto;
+}
+.main{
+    margin: 10px;
+    text-align: center;
+}
+.backBtn{
+    /*margin-left: 20px;*/
+    margin-top: 30px ;
+    float: right;
+    margin-right: 10px;
+}
+ul{
+    margin-top: 10%;
+}
+li{
+    list-style-type: square;
+}
+.logOutBtn{
+    float: right;
+    margin-right: 20px;
+    margin-top: 30px ;
+}
+.ageDiv{
+    margin-top:20px;
+    float: left !important;
+    text-align: left !important;
+    margin-left: 30px;
+}
